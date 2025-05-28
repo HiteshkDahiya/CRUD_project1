@@ -1,0 +1,39 @@
+{% extends 'enroll/home.html' %}
+<!--<!DOCTYPE html>-->
+<!--{% load static %}-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Update data page</title>-->
+<!--    <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--  <div class="container ">-->
+<!--    <h1 class="text-center alert alert-warning">Update Data of Student</h1>-->
+<!--    <div class=" row">-->
+<!--      <div class="col-sm-8 offset-2">-->
+<!--        <form action="" method="POST" >-->
+<!--          {% csrf_token %}-->
+<!--          {{ form.as_p }}-->
+<!--          <input type="submit" value="submit" class="btn btn-success" />-->
+<!--        </form>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <script src="{% static 'js/bootstrap.js' %}"></script>-->
+<!--  <script src="{% static 'js/jquery.js' %}"></script>-->
+<!--  <script src="{% static 'js/popper.js' %}"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+{% block content2 %}
+<h1 class="text-center alert alert-warning">Update the data</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ stu.as_p }}
+    <input type="submit" value="submit" class="btn btn-success" />
+    <a href="{% url 'home' %}" class="btn btn-info" >Home</a>
+</form>
+{% endblock %}

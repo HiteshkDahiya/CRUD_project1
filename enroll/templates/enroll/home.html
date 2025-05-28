@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel='stylesheet' href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center alert alert-danger">Function based View ModelForm CRUD project</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <h3 class="text-center alert alert-info">Add New Student</h3>
+                {%  block content1 %}
+                {% endblock %}
+            </div>
+            <div class="col-sm-7 offset-1">
+                <h3 class="text-center alert alert-info">Show Student Information</h3>
+                {%  block content2 %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+</body>
+</html>

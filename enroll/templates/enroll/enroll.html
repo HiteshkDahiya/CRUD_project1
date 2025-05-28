@@ -1,0 +1,42 @@
+{% extends 'enroll/home.html' %}
+{% block content1 %}
+<form action="" method="POST" >
+    {% csrf_token %}
+    {{ stu.as_p }}
+    <input type="submit" value="submit" class="btn btn-success" />
+</form>
+{% endblock %}
+
+{% block content2 %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dt in data %}
+        <tr>
+            <td>{{ dt.id }}</td>
+            <td>{{ dt.name }}</td>
+            <td>{{ dt.email }}</td>
+            <td>{{ dt.password }}</td>
+            <td><form action="{% url 'updatedata' dt.id %}" method="POST">
+                    {% csrf_token %}
+                    <input class="btn btn-warning btn-sm" type="submit" value="Update" />
+                </form></td>
+<!--            <td><input class="btn btn-danger btn-sm" type="submit" value="Delete" onclick="window.location.href='{% url 'deletedata' dt.id %}'" /></td>-->
+            <td><form action="{% url 'deletedata' dt.id %}" method="POST">
+                    {% csrf_token %}
+                    <input class="btn btn-danger btn-sm" type="submit" value="Delete" />
+                </form></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
